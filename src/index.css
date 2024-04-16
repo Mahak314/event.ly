@@ -1,0 +1,1286 @@
+/* Import 'Lobster' font */
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,500;1,700&display=swap');
+body {
+  margin: 0;
+  padding: 0;
+  position: relative; /* Required for positioning pseudo-element */
+  background-color: rgba(0, 0, 0, 0.903);
+  overflow: scroll; /* Hide overflow to prevent scrollbar when changing images */
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: 100% 100%;
+  opacity: 0.1; /* Adjust the opacity level as needed (0.5 means 50% opacity) */
+  animation: imageShuffle 20s infinite; /* Adjust the duration as needed */
+}
+
+@keyframes imageShuffle {
+  0%, 100% {
+    background-image: url('./images/img5.jpg');
+  }
+  25% {
+    background-image: url('./images/img6.jpg');
+  }
+  50% {
+    background-image: url('./images/img7.jpg');
+  }
+  75% {
+    background-image: url('./images/img9.jpg');
+  }
+}
+
+/* Sidebar.css */
+.sidebar {
+  width: 110px;
+  height: 100%;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Align content at the top */
+  color: white;
+  font-size: 1.5rem;
+}
+
+.sidefooter{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.7rem;
+  margin-left: 10px;
+  color: rgba(255, 255, 255, 0.727);
+  text-align: center;
+  margin-top: 30px;
+}
+
+.sidefooter p {
+  margin-top: 5px; /* Add some top margin for spacing */
+}
+
+.evently {
+  font-family: 'Lobster', cursive;
+  font-size: 1rem; /* Adjust the font size as needed */
+  margin-top: -5px; /* Add margin to push it down */
+  margin-left: -21px;
+}
+
+
+.logo-container {
+  margin-top: 3.75rem; /* 60px converted to rem */
+  margin-left: 2rem;
+}
+
+.logo {
+  margin-left: -1.0625rem; /* -17px converted to rem */
+  width: 2.8125rem;  /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+  transition: transform 0.3s;
+  /* Add animation properties */
+  animation-name: rotate;
+  animation-duration: 4s; /* Adjust the duration as needed */
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rotated-links {
+  list-style-type: none; /* Remove default list bullets */
+  padding: 0; /* Remove default padding */
+  margin-left: 80px; /* Adjust the left margin as needed */
+  margin-top: 50px;
+}
+
+.rotated-link-item a {
+  white-space: nowrap; /* Remove underline for links */
+  margin-bottom: 80px; /* Adjust the margin between links */
+  display: block; /* Make the link a block element */
+  position: relative;
+}
+
+
+.rotated-link-item a span {
+  transform: rotate(-90deg);
+  transform-origin: left bottom;
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.727);
+  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  position: relative; /* Add relative positioning to create the strikethrough effect */
+  
+}
+/* Add the following CSS for the strikethrough animation */
+
+.rotated-link-item a span::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 4px; /* Adjust the strikethrough thickness as needed */
+  background-color: #98a9ff;
+  bottom: 0;
+  left: 0;
+  transform-origin: bottom right;
+  transform: scaleX(0); /* Initially, the strikethrough is scaled to zero */
+  transition: transform 0.3s ease-out, color 0.3s ease-out; /* Add smooth transition */
+  border-radius: 2px;
+}
+
+.rotated-link-item a span:hover::before {
+  transform: scaleX(1); /* Scale the strikethrough to full width on hover */ /* Change the background color to white on hover */
+}
+
+.rotated-link-item:first-child a span {
+  margin-top: 60px; /* Adjust the margin-top for the first element as needed */
+}
+.social-icons{
+  margin-top: 0.8rem;
+  display: flex; /* Use Flexbox for horizontal alignment */
+  justify-content: space-around; /* Distribute images evenly within the container */
+  align-items: center;
+}
+
+.image-link {
+  text-align: center;
+  width: auto; /* Adjust the image width as needed */
+  height: 35px; /* Maintain aspect ratio */
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-link:hover{
+  transform: scale(1.2);
+}
+
+.image-link1 {
+  text-align: center;
+  width: auto; /* Adjust the image width as needed */
+  height: 35px; /* Maintain aspect ratio */
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-link1:hover{
+  transform: scale(1.2);
+}
+
+.image-link2 {
+  text-align: center;
+  width: auto; /* Adjust the image width as needed */
+  height: 35px; /* Maintain aspect ratio */
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-link2:hover{
+  transform: scale(1.2);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+.main-content{
+  background-image: fixed;
+  margin-left: 130px;
+  position: relative;
+  width: calc(100% - 130px); /* Adjust the width according to your sidebar width */
+  min-height: 100vh; /* Ensure the content takes at least the full viewport height */
+  padding: 20px; /* Add padding as needed */
+  box-sizing: border-box; /* Include padding in the width calculation */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center content */
+  align-items: center;  /* Horizontally center content */
+  }
+
+  .main-content::before {
+    content: '';
+    background-size: 1350px 805px; 
+    opacity: 0.06; /* Adjust the opacity level as needed (0.5 means 50% opacity) */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Place the overlay behind the content */
+  }
+
+  .content {
+    margin-left: 0px;
+    margin-top: 0px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.4rem;
+  }
+  .content1 {
+    margin-left: 0px;
+    margin-top: 0px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.4rem;
+  }
+
+  .transparent-button {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #98a9ff;;
+    color: white;
+    padding: 0.625rem 1.25rem; /* 10px 20px converted to rem */
+    margin-top: 0.8125rem; 
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 0px;
+    opacity: 0; /* Start with opacity set to 0 to make the button invisible */
+    transform: translateY(30px); /* Start with the button translated downwards */
+    animation: appear 5s ease-in-out forwards,  pulse 2s infinite;
+  }
+  .transparent-button1 {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #98a9ff;;
+    color: white;
+    padding: 0.625rem 1.25rem; /* 10px 20px converted to rem */
+    margin-top: 0.8125rem; 
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 0px;
+    opacity: 0; /* Start with opacity set to 0 to make the button invisible */
+    transform: translateY(30px); /* Start with the button translated downwards */
+    animation: appear 5s ease-in-out forwards,  pulse 2s infinite;
+  }
+  @keyframes appear {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  /* Target the input-group-text div */
+  .transparent-button a {
+    font-size: 1rem;
+    color: white; /* Set the initial text color (black) */
+    text-decoration: none; /* Remove underline if needed */
+    display: block; /* Make the link a block-level element */
+    padding: 5px 5px; /* Add padding for better button appearance */
+  }
+
+  .transparent-button:hover {
+    color: white;
+    background-color: #98a9ffad; /* Change the background color on hover */
+    border-color: transparent; /* Hide the border on hover or modify as needed */
+    transform: scale(1.02);
+  }
+
+  .transparent-button1 a {
+    font-size: 1rem;
+    color: white; /* Set the initial text color (black) */
+    text-decoration: none; /* Remove underline if needed */
+    display: block; /* Make the link a block-level element */
+    padding: 5px 5px; /* Add padding for better button appearance */
+  }
+
+  .transparent-button1:hover {
+    color: white;
+    background-color: #98a9ffad; /* Change the background color on hover */
+    border-color: transparent; /* Hide the border on hover or modify as needed */
+    transform: scale(1.02);
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+  .transparent-button:hover a {
+    color: white; /* Change text color to black on hover */
+  }
+  .transparent-button1:hover a {
+    color: white; /* Change text color to black on hover */
+  }
+  .top-right-buttons {
+    position: absolute;
+    top: 70px;
+    right: 80px;
+  }
+  
+  .login-button, .signup-button {
+    font-family: 'Montserrat', sans-serif;
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    padding: 0.625rem 1.25rem; /* 10px 20px converted to rem */
+    margin-left: 2.5rem; /* 40px converted to rem */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transform: scale(1);
+    transition: transform 0.5s;
+  }
+  .login-button a, .signup-button a{
+    color: white;
+    text-decoration: none;
+  }
+  .login-button:hover, .signup-button:hover {
+    transform: scale(1.3); /* Scale up on hover */
+  }
+
+  .main-contentevents{
+    margin-left: 130px;
+    position: relative;
+    width: calc(100% - 130px); /* Adjust the width according to your sidebar width */
+    min-height: 100vh; /* Ensure the content takes at least the full viewport height */
+    padding: 20px; /* Add padding as needed */
+    box-sizing: border-box; /* Include padding in the width calculation */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center content */
+    align-items: center;  /* Horizontally center content */
+    }
+  
+    .main-contentevents::before {
+      content: '';
+      background-size: 1350px 805px; 
+      opacity: 0.06; /* Adjust the opacity level as needed (0.5 means 50% opacity) */
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1; /* Place the overlay behind the content */
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+    .about {
+      margin-left: 270px;
+      max-width: 1000px;
+      padding: 20px;
+      text-align: center;
+      font-family: 'Montserrat', sans-serif;
+      color: white;
+    }
+    
+    .secondary {
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    
+    .secondary.visible {
+      opacity: 1;
+    }
+    
+    h1 {
+      font-size: 3.5rem;
+      color: white;
+      margin-left: 10px;
+      margin-top: 12rem;
+      margin-bottom: 1.7rem;
+    }
+    
+    h2 {
+      font-size: 3.5rem;
+      color: white;
+      margin-left: 10px;
+      margin-top: 2rem;
+      margin-bottom: 20px;
+    }
+    
+    /* Adjust the margin and padding for the mission paragraphs */
+    .mission-paragraph1,
+    .mission-paragraph {
+      text-align: left;
+      font-size: 1.5rem;
+      color: #777;
+      margin-top: 10px; /* Adjust the top margin as needed */
+      margin-bottom: 20px; /* Adjust the bottom margin as needed */
+    }
+    
+    .mission-paragraph:last-child {
+      margin-bottom: 30px;
+    }
+    
+    /* Ensure a two-column layout for the mission columns */
+    .secondary .mission-columns {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    
+    .mission-column {
+      flex: 1;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+     
+      /* Style for the user menu container */
+    .user-menu {
+      position: fixed;
+      z-index: 999;
+      display: inline-block;
+    }
+    
+    /* Style for the user icon */
+    .user-icon {
+      margin-top: -32px;
+      margin-left: 1380px;
+      cursor: pointer;
+    }
+    
+    .user-name{
+      font-family: 'Montserrat', sans-serif;
+      color: white;
+      margin-left: 1295px;
+      margin-top: 90px;
+      font-size: 0.9rem;
+    }
+    
+    /* Style for the user icon image */
+    .user-icon img {
+      width: 70px; /* Adjust the width as needed */
+      height: auto; /* Adjust the height as needed */
+      transition: opacity 0.3s ease-in-out;
+    }
+    
+    .user-icon img:hover{
+      opacity: 0.5;
+    }
+    /* Style for the menu options */
+    .menu-options {
+      position: absolute;
+      top: 100%; /* Position the menu below the user icon */
+      right: 0; /* Align the menu to the right of the user icon */
+      list-style: none;
+      padding-right: 15px;
+      text-align: right;
+      margin: 0;
+      background-color: transparent; /* Background color for the menu */
+      border: none; /* Border around the menu */
+      box-shadow: none; /* Box shadow for the menu */
+      visibility: hidden;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease-in-out, visibility 0.5s ease-in-out;
+    }
+    
+    /* Style for the open menu */
+    .menu-options.open {
+      z-index: 999;
+      visibility: visible; /* Show the menu when the 'open' class is applied */
+      max-height: 300px; /* Set the maximum height you want for the dropdown */
+    }
+    
+ 
+    .menu-options li button a{
+      background-color: transparent;
+      border: none;
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8rem;
+      color: white;
+      padding: 10px;
+      cursor: pointer;
+      position: relative; 
+    }
+
+    .menu-options li button {
+      background-color: transparent;
+      border: none;
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8rem;
+      color: white;
+      padding: 10px;
+      cursor: pointer;
+      position: relative; 
+    }
+    
+    .menu-options li button::before {
+      content: '';
+      position: absolute;
+      width: 80%;
+      height: 2px; /* Adjust the thickness of the underline */
+      bottom: 0;
+      left: 10%;
+      background-color: #98a9ff;;
+      transform: scaleX(0); /* Initial scaling to 0 (no underline) */
+      transform-origin: bottom right;
+      transition: transform 0.3s ease-in-out;
+      border-radius: 5px;
+    }
+    
+    .menu-options li button:hover::before {
+      transform: scaleX(1); /* Scale to 100% width on hover */
+      transform-origin: bottom left;
+    }
+    .upcoming-events {
+      font-family: 'Montserrat', sans-serif;
+      color: #fff; /* Text color */
+      padding: 10px;
+      border-radius: 5px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 2.5rem;
+      margin-top: 6.25rem; /* 100px converted to rem */
+      margin-left: -6.25rem;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .App {
+      text-align: center;
+      display: flex;
+      min-height: 100vh;
+      align-items: center;
+      justify-content:center;
+      box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.7);
+      color: white;
+    }
+    .auth-form-container, .register-form, .login-form{
+      display: flex;
+      flex-direction: column;
+    }
+    .btn.btn-lg.btn-danger[data-toggle="popover"] {
+      margin-top: 3rem;
+      background-color: #98a9ff;
+      border: none;
+    }
+    .alert {
+      /* Add your desired styles here */
+      padding: 10px;
+      border: 1px solid #98a9ff;
+      border-radius: 5px;
+      font-size: 0.8rem;
+      margin-top: 9rem;
+      margin-left: 45rem;
+      margin-bottom: -2rem;
+      width: 39rem;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    /* Define styles for the "alert-light" class */
+    .alert-light {
+      background-color: transparent;
+      color: white;
+    }
+    /* Target the button when it's hovered over */
+    .btn.btn-lg.btn-danger[data-toggle="popover"]:hover {
+      background-color: #98a9ffc0;
+      z-index: 999;
+    }
+    .auth-form-container{
+      width: 30rem; /* Set the width of the container */
+      margin: 0 auto; /* Center the container horizontally */
+      padding: 10px; /* Add some padding to the container */
+      border: 1px solid #ccc;
+      border-radius: 10px; /* Add rounded corners to the container */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      padding-left: 100px;
+      padding-right: 100px;
+      opacity: 0; /* Initially set opacity to 0 to hide it */
+      transition: opacity 2s ease-in-out;
+    }
+    .fade-in {
+      opacity: 1; /* Set opacity to 1 to make it visible */
+    }
+    .auth-form-container h2{
+      font-family: 'Montserrat', sans-serif;
+      margin-bottom: 30px;
+      text-align: center;
+      margin-left: -5px;
+      margin-top: 0px;
+      font-size: 3.7rem;
+    }
+    .registerh2 h2{
+      font-family: 'Montserrat', sans-serif;
+      margin-bottom: 30px;
+      text-align: center;
+      margin-left: -5px;
+      margin-top: 0px;
+      font-size: 3.7rem;
+    }
+    label{
+      text-align: left;
+      padding: 0.25rem 0;
+    }
+    input {
+      font-family: 'Montserrat', sans-serif;
+      text-align: left;
+      color: white;
+      background: transparent;
+      margin: 0.5rem 0;;
+      padding: 1rem;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      margin-bottom: 30px;
+    }
+    .input-fullname {
+      width: 13rem;
+      height: 2rem;
+      font-size: 1rem;
+      margin-right: 0.5rem;
+    }
+    .error {
+      margin-left: -3rem;
+      width: 30rem;
+      font-family: 'Montserrat', sans-serif;
+      color: red; /* Set the text color to red */
+      font-size: 14px; /* Adjust the font size as needed */
+      margin-top: 0rem; /* Add some space above the error message */
+    }
+    
+    button {
+      font-family: 'Montserrat', sans-serif;
+      background-color: transparent;
+      color: white;
+      cursor: pointer;
+      border: none;
+    }
+    .login-button1{
+      color: white;
+      text-decoration: none;
+      text-align: center;
+      margin-left: 5px;
+      padding: 12px 12px;
+      margin-top: 10px;
+      border: 1px solid transparent;
+      border-radius: 10px;
+      transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+      background-color: #98a9ff;
+    }
+    .login-button1:hover{
+      transform: scale(1.05);
+      color: white;
+      background-color: #98a9ffad;
+    }
+    .link-btn{
+      width: 25rem;
+      box-shadow: none;
+      margin-top: 20px;
+      border: none;
+      background: none;
+      color: white;
+      text-decoration: none;
+      position: relative; 
+      left: -4rem;
+    }
+    .link-btn a{
+      color: white;
+      text-decoration: none;
+    }
+    .link-btn::before {
+      content: '';
+      position: absolute;
+      width: 80%;
+      height: 2px; /* Adjust the thickness of the underline */
+      bottom: 0;
+      left: 10%;
+      background-color: #98a9ff;;
+      transform: scaleX(0); /* Initial scaling to 0 (no underline) */
+      transform-origin: bottom right;
+      transition: transform 0.3s ease-in-out;
+    }
+    
+    .link-btn:hover::before {
+      transform: scaleX(1); /* Scale to 100% width on hover */
+      transform-origin: bottom left;
+    }
+
+    .contact-heading {
+      margin-left: 0px;
+      font-size: 4rem; /* 64px converted to rem */
+      margin-top: 10rem;
+      font-family: 'Montserrat', sans-serif;
+      margin-bottom: 20px;
+    }
+    
+    /* Styles for the contact form container */
+    .contact-form {
+      max-width: 37.5rem; /* 600px converted to rem */
+      margin-left: -3.125rem;
+    }
+    
+    /* Styles for form groups (input and textarea containers) */
+    .form-group {
+      margin-bottom: 0.625rem;
+    }
+    
+    
+    /* Styles for form inputs and textarea */
+    .form-input,
+    .form-textarea {
+      font-family: 'Montserrat', sans-serif;
+      width: 100%;
+      padding: 0.625rem; /* 10px converted to rem */
+      font-size: 1rem; /* 16px converted to rem */
+      border: 0.0625rem solid #ccc; /* 1px converted to rem */
+      border-radius: 0.625rem; /* 10px converted to rem */
+      background: transparent;
+      color: white;
+    }
+    .form-label{
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 20px;
+      text-align: center;
+      
+    }
+
+    /* Style the submit button */
+    .submit-button {
+      margin-left: 70px;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #98a9ff;;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 13px;
+      opacity: 0; /* Start with opacity set to 0 to make the button invisible */
+      transform: translateY(30px); /* Start with the button translated downwards */
+      animation: appear 5s ease-in-out forwards,  pulse 2s infinite;
+    }
+    
+    /* Hover effect for the submit button */
+    .submit-button:hover {
+      color: white;
+      background-color: #98a9ffad; /* Change the background color on hover */
+      border-color: transparent; /* Hide the border on hover or modify as needed */
+      transform: scale(1.02);
+    }
+
+    /* CSS for the EventBox component */
+.event-box {
+  scroll-behavior: smooth;
+  display: flex;
+  background-color: transparent; /* Transparent white background */
+  border: none;
+  padding: 0.625rem; /* 10px converted to rem */
+  margin: 0.625rem;
+  border-radius: 0.3125rem;
+  width: 80%;
+  height: 30%;
+  max-height: 18rem;
+  max-width: 50rem; /* 800px converted to rem */
+  margin-left: 5rem; /* 80px converted to rem */
+  box-shadow: 0px 0px 0.625rem rgba(255, 255, 255, 0.484);
+  opacity: 0; /* Initially hide the box */
+  transition: transform 0.3s ease-in-out, opacity 0.5s ease-in-out;
+}
+.event-box.show {
+  opacity: 1; /* Fade in when the "show" class is applied */
+}
+.event-box:hover {
+  transform: scale(1.02); /* Scale the box on hover */
+  cursor: pointer;
+}
+.event-box img {
+  width: 7rem; /* 150px converted to rem */
+  height: 8rem; /* 130px converted to rem */
+  margin-right: 0.625rem;
+  filter: grayscale(50%); /* Make the image grayscale by default */
+  transition: filter 0.3s ease;
+}
+.event-box:hover img {
+  filter: grayscale(0%); /* Restore color on hover */
+}
+.event-details {
+  flex-grow: 1;
+}
+
+.event-details h2 {
+  color: #98a9ff;
+  font-size: 1.125rem;
+  margin: 0;
+}
+
+.event-details p {
+  text-align: center;
+  font-size: 0.875rem;
+  margin: 0;
+  width: 650px;
+}
+
+.reserve-button {
+  background-color: #98a9ff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.8rem;
+  margin-top: -1rem;
+  
+}
+
+.reserve-button:hover {
+  background-color: #98a9ffad;
+}
+
+/* In your CSS file */
+.newsletter-subscription {
+  text-align: center;
+  padding: 10px;
+  box-shadow: 0px 0px 10px rgba(227, 216, 216, 0.484);
+  background-color: transparent;
+  width: 25rem;
+  height: 11rem;
+  margin: 0 auto;
+  z-index: 999;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 20px;
+  margin-left: 35rem;
+  margin-top: 1rem;
+}
+
+.newsletter-subscription h2 {
+  font-size: 1.5rem; /* 24px converted to rem */
+  margin-bottom: 0.625rem;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 0px;
+}
+
+.newsletter-subscription p {
+  font-size: 2rem;
+  color: #98a9ff;/* Change the color to your brand color */
+  font-family: 'Montserrat', sans-serif;
+}
+
+.newsletter-subscription form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.newsletter-subscription input[type="email"] {
+  width: 18.75rem; /* 300px converted to rem */
+  padding: 0.625rem; /* 10px converted to rem */
+  font-size: 1rem; /* 16px converted to rem */
+  border: 0.0625rem solid #ddd; /* 1px converted to rem */
+  border-radius: 0.625rem; /* 10px converted to rem */
+  margin-bottom: 0.625rem; 
+  font-family: 'Montserrat', sans-serif;
+}
+
+.newsletter-subscription button {
+  padding: 10px 20px;
+  background-color: #98a9ff; /* Change the color to your brand color */
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.newsletter-subscription button:hover {
+  background-color: #98a9ffad;  /* Change the hover color */
+}
+
+.colored-text {
+  color: #98a9ff;
+}
+
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Add styles for the modal itself */
+.modal {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* Add styles for the modal buttons */
+.modal-buttons {
+  margin-top: 20px;
+}
+
+/* Style the buttons inside the modal */
+.modal button {
+  margin: 0 10px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+/* Style the modal title */
+.modal h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+.progress-text {
+  /* Styles for the progress text go here */
+  text-align: center; /* Center the text horizontally */
+  margin-top: 3.5rem; /* Adjust the top margin as needed */
+  font-weight: bold; /* Make the text bold if desired */
+  font-size: 1.5rem; /* Adjust the font size as needed */
+  color: white; /* Set the text color */
+}
+.custom-cursor {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-radius: 20px;
+  border-bottom: 20px solid #98a9ff; /* Adjust color and size as needed */
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+
+@media only screen and (max-width: 768px) {
+  /* Your smartphone-specific styles go here */
+
+  /* For example, you can adjust font sizes, margins, padding, etc. */
+  body {
+    font-size: 14px;
+  }
+
+  .top-right-buttons {
+    /* Adjust the positioning for smartphones */
+    position: absolute;
+    top: 70px; /* You can change the top value to control the vertical positioning */
+    right: 25px; /* Adjust the right value to control the horizontal positioning */
+  }
+
+  .login-button, .signup-button {
+    margin-left: 0rem; /* 40px converted to rem */
+    font-size: 0.8rem;
+  }
+  .content {
+    font-size: 2.7rem;
+    margin-right: 3rem;
+    margin-top: -5rem;
+    max-width: 10rem;
+  }
+  .content1 {
+    font-size: 2.7rem;
+    margin-right: 3rem;
+    margin-top: -15rem;
+    max-width: 10rem;
+  }
+  .transparent-button {
+    margin-right: 2.3rem;
+  }
+  .transparent-button1 {
+    margin-right: 2.3rem;
+  }
+  .auth-form-container{
+    margin-left: -8rem;
+    width: 10rem;
+    border: none;
+    box-shadow: none;
+  }
+  input {
+    width: 14rem;
+    margin-left: -2rem;
+  }
+  .login-button1{
+    width: 10rem;
+    margin-left: 0rem;
+  }
+  .link-btn a{
+    margin-left: -7rem;
+    font-size: 0.7rem;
+  }
+  .auth-form-container .registerh2{
+    margin-left: -3rem;
+  }
+  .user-menu {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Style for the user icon */
+  .user-icon {
+    margin-top: 100rem;
+    margin-left: 21rem;
+  }
+  
+  .user-name{
+    margin-left: 17rem;
+    font-size: 0.7rem;
+  }
+  .sidefooter{
+    margin-top: 6.8rem;
+  }
+  .menu-options li button{
+    margin-bottom: -2rem;
+    font-size: 0.6rem;
+  }
+  .menu-options li button a{
+    font-size: 0.6rem;
+  }
+  .upcoming-events {
+    font-size: 1.8rem;
+    width: 17rem;
+    margin-top: 3.25rem; /* 100px converted to rem */
+    margin-left: -3rem;
+  }
+  .event-box {
+    width: 14rem;/* 800px converted to rem */
+    margin-left: 1rem; /* 80px converted to rem */
+    height: auto;
+    transition: max-height 0.3s ease;
+  }
+
+  .event-box img {
+    width: 3rem; /* 150px converted to rem */
+    height: 4rem; /* 130px converted to rem */
+    margin-right: 0.625rem;
+  }
+  
+  .event-details h2 {
+    font-size: 0.8rem;
+    margin-left: 1rem;
+    text-align: left;
+  }
+  
+  .event-details p {
+    font-size: 0.6rem;
+    margin-left: 1rem;
+    text-align: left;
+    width: 9rem;
+  }
+  .sidebar{
+    position: sticky;
+    overflow: hidden;
+  }
+  .image-link {
+    text-align: center;
+    width: auto; /* Adjust the image width as needed */
+    height: 1.5rem; /* Maintain aspect ratio */
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .image-link1 {
+    text-align: center;
+    width: auto; /* Adjust the image width as needed */
+    height: 1.5rem; /* Maintain aspect ratio */
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .image-link2 {
+    text-align: center;
+    width: auto; /* Adjust the image width as needed */
+    height: 1.5rem; /* Maintain aspect ratio */
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .contact-heading {
+    margin-left: -1rem;
+    font-size: 3rem; /* 64px converted to rem */
+    margin-top: -10.625rem;
+    margin-bottom: 20px;
+  }
+  
+  /* Styles for the contact form container */
+  .contact-form {
+    max-width: 37.5rem; /* 600px converted to rem */
+    margin-left: -3.125rem;
+  }
+  
+  /* Styles for form groups (input and textarea containers) */
+  .form-group {
+    margin-bottom: 0.625rem;
+    margin-left: 5rem;
+  }
+  .form-group textarea[placeholder="Your Feedback"] {
+    margin-left: -2rem;
+    margin-right: 10rem;
+  }
+  /* Styles for form inputs and textarea */
+  .form-input,
+  .form-textarea {
+    width: 100%;
+    font-size: 0.7rem; /* 16px converted to rem */
+    border-radius: 0.625rem; /* 10px converted to rem */
+    background: transparent;
+    color: white;
+  }
+
+  /* Style the submit button */
+  .submit-button {
+    margin-left: 6.5rem;
+    font-size: 16px;
+    border-radius: 4px;
+    margin-top: 13px;
+  }
+  .popover {
+    background-color: #333; /* Background color */
+    color: #fff; /* Text color */
+    border: 2px solid #ffcc00; /* Border */
+    border-radius: 10px; /* Border radius */
+    font-size: 14px; /* Font size */
+    z-index: 999;
+  }
+  
+  /* Custom CSS for Popover Arrow */
+  .popover.bottom .arrow::after {
+    border-bottom-color: #333; /* Arrow color */
+  }
+  .about {
+    margin-left: 7rem;
+    max-width: 20rem;
+  }
+  
+  h1 {
+    font-size: 2.7rem;
+    color: white;
+    margin-left: 10px;
+    margin-top: 3.2rem;
+    margin-bottom: 0.7rem;
+    text-align: left;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    color: white;
+    margin-left: 0.5rem;
+    margin-top: 5.5rem;
+    margin-bottom: 0.7rem;
+    text-align: left;
+  }
+  
+  /* Adjust the margin and padding for the mission paragraphs */
+  .mission-paragraph1,
+  .mission-paragraph {
+    max-width: 20rem;
+    text-align: left;
+    font-size: 0.8rem;
+    color: #777;
+    margin-top: 0rem; /* Adjust the top margin as needed */
+    margin-bottom: 1.5rem; /* Adjust the bottom margin as needed */
+  }
+  
+  .mission-paragraph:last-child {
+    margin-bottom: 30px;
+  }
+  
+  /* Ensure a two-column layout for the mission columns */
+  
+  .mission-column {
+    max-width: 20rem;
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  .newsletter-subscription {
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0px 0px 10px rgba(227, 216, 216, 0.484);
+    background-color: transparent;
+    width: 17rem;
+    height: 11rem;
+    margin: 0 auto;
+    z-index: 999;
+    cursor: pointer;
+    position: relative;
+    margin-bottom: 20px;
+    margin-left: 7.6rem;
+    margin-top: 0rem;
+  }
+  
+  .newsletter-subscription h2 {
+    font-size: 1.3rem; /* 24px converted to rem */
+    margin-bottom: 0.625rem;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 0px;
+    text-align: center;
+  }
+  
+  .newsletter-subscription p {
+    font-size: 1.5rem;
+    color: #98a9ff;/* Change the color to your brand color */
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .newsletter-subscription form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .newsletter-subscription input[type="email"] {
+    width: 15rem; /* 300px converted to rem */
+    padding: 0.625rem; /* 10px converted to rem */
+    font-size: 0.7rem; /* 16px converted to rem */
+    border: 0.0625rem solid #ddd; /* 1px converted to rem */
+    border-radius: 0.625rem; /* 10px converted to rem */
+    margin-bottom: 0.625rem; 
+    margin-left: 0.2rem;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .newsletter-subscription button {
+    padding: 10px 20px;
+    background-color: #98a9ff; /* Change the color to your brand color */
+    color: white;
+    font-size: 0.8rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .newsletter-subscription button:hover {
+    background-color: #98a9ffad;  /* Change the hover color */
+  }
+  .alert {
+    /* Add your desired styles here */
+    padding: 10px;
+    border: 1px solid #98a9ff;
+    border-radius: 5px;
+    font-size: 0.5rem;
+    margin-top: 4.8rem;
+    margin-left: -3rem;
+    margin-bottom: -2rem;
+    width: 15rem;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  /* Define styles for the "alert-light" class */
+  .alert-light {
+    background-color: transparent;
+    color: #98a9ff;
+  }
+}
